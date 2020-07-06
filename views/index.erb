@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>Hook Relay Test App</title>
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+    <style>
+      #location {
+        background-color: rgba(50, 205, 107, 0.33);
+        padding: 1rem;
+        border-radius: 1rem;
+      }
+      header, main {
+        padding: 0 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Hook Relay Test App</h1>
+    </header>
+    <main>
+      <% if params[:location] %>
+        <section>
+          <p id="location">
+            Request sent! You can <a href="<%= params[:location].sub("api", "app") %>">view your delivery</a> in the UI.
+          </p>
+        </section>
+      <% end %>
+      <section>
+        <p>
+          Enter a URL you want to send a POST request to, along with a body and some optional headers:
+        </p>
+      </section>
+      <section>
+        <form method="post">
+          <label>URL</label>
+          <input type="text" name="url" value="https://api.hookrelay.dev/test" size="60">
+          <label>Body</label>
+          <textarea name="body" cols="60" rows="4">{"hello":"world"}</textarea>
+          <label>Headers</labe>
+          <textarea name="headers" cols="60" rows="4">
+Content-type: application/json
+X-Test: Foo
+          </textarea>
+          <button type="submit">Do it!</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

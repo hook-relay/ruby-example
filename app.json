@@ -1,0 +1,10 @@
+{
+  "name": "Hook Relay Test App",
+  "description": "A simple Sinatra app that shows how to use Hook Relay to reliably send web hooks",
+  "repository": "https://github.com/hook-relay/ruby-example",
+  "keywords": ["webhook"],
+  "website": "https://www.hookrelay.dev/",
+  "addons": [
+    {"plan":"hookrelay"}
+  ]
+}
